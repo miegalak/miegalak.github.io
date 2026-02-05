@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>miegalak — Dev, Maker</title>
+  <meta name="description" content="Welcome to miegalak's site. Developer, maker, and open-source enthusiast. Explore projects and get in touch." />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="miegalak — Dev, Maker" />
+  <meta property="og:description" content="Developer, maker, and open-source enthusiast. Explore projects and get in touch." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#536077; --accent:#2563eb;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+    }
+    [data-theme="dark"]{
+      --bg:#071029; --card:#071430; --text:#e6eef8; --muted:#98a8c7; --accent:#60a5fa;
+      --glass: rgba(10,20,30,0.4);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg), #e6eef8 120%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.12);
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--text)}
+    main{margin-top:32px}
+    .hero{
+      display:grid;grid-template-columns:1fr;gap:20px;align-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.7), var(--glass));
+      border-radius:var(--radius);padding:28px;box-shadow:0 6px 30px rgba(2,6,23,0.06);
+      backdrop-filter: blur(6px);
+    }
+    .hero h1{margin:0;font-size:clamp(1.6rem,3.6vw,2.4rem)}
+    .hero p{margin:6px 0 0;color:var(--muted)}
+    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
+      font-weight:700;border:0;cursor:pointer;text-decoration:none;color:white;background:var(--accent);
+      box-shadow: 0 6px 18px rgba(37,99,235,0.18);
+    }
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(15,23,42,0.06);box-shadow:none}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
+    .card{
+      background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 30px rgba(2,6,23,0.04);
+    }
+    .card h3{margin:0 0 6px;font-size:1rem}
+    .card p{margin:0;color:var(--muted);font-size:0.92rem}
+    footer{margin-top:28px;color:var(--muted);font-size:0.92rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .socials a{margin-left:8px;color:var(--muted);text-decoration:none;font-weight:700}
+    .theme-toggle{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+    /* Focus */
+    a:focus,button:focus{outline:3px solid rgba(37,99,235,0.18);outline-offset:3px;border-radius:8px}
+    /* Responsive */
+    @media(min-width:860px){
+      .hero{grid-template-columns:1fr 360px}
+      .hero .intro{padding-right:8px}
+      .hero .aside{padding-left:4px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">M</div>
+        <div>
+          <div style="font-weight:800">miegalak</div>
+          <div style="font-size:12px;color:var(--muted)">Developer • Open-source • Creator</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">Toggle theme</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="intro">
+          <h1 id="hero-title">Hi — I’m miegalak. I build open-source projects and small web tools.</h1>
+          <p>I'm focused on practical, approachable projects you can use and contribute to. This is a minimal GitHub Pages landing page—customize it and publish directly.</p>
+          <div class="cta" role="list">
+            <a class="btn" href="#projects" role="listitem">View projects</a>
+            <a class="btn secondary" href="#contact" role="listitem">Get in touch</a>
+            <a class="btn secondary" href="https://github.com/miegalak" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Open GitHub profile">GitHub</a>
+          </div>
+          <p style="margin-top:14px;font-size:0.9rem;color:var(--muted)">Tip: Replace project placeholders below with real repos or links.</p>
+        </div>
+
+        <aside class="aside" aria-labelledby="aside-title">
+          <h2 id="aside-title" style="margin:0 0 10px">Featured</h2>
+          <div class="card" role="article">
+            <h3>Quick start template</h3>
+            <p>Single-file starter for GitHub Pages. Drop in your content and publish.</p>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <a class="btn" href="#projects">Explore</a>
+              <a class="btn secondary" href="#contact">Sponsor</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" style="margin-top:26px">
+        <h2 style="margin:0 0 12px">Projects</h2>
+        <div class="grid">
+          <article class="card" aria-labelledby="p1">
+            <h3 id="p1">Project One</h3>
+            <p>Short description. Replace with a real project link and a one-liner about what it does.</p>
+          </article>
+
+          <article class="card" aria-labelledby="p2">
+            <h3 id="p2">Project Two</h3>
+            <p>Short description. Add repo URL or demo link.</p>
+          </article>
+
+          <article class="card" aria-labelledby="p3">
+            <h3 id="p3">Project Three</h3>
+            <p>Short description. Mention tech used and status (WIP, complete).</p>
+          </article>
+
+          <article class="card" aria-labelledby="p4">
+            <h3 id="p4">Blog / Notes</h3>
+            <p>Link to posts, readme collections, or a dev log. Use GitHub Pages collections or link to a blog.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:28px">
+        <h2>About</h2>
+        <div class="card" style="margin-top:12px">
+          <p>Hello — I'm miegalak. I enjoy building helpful open-source tools and learning new web patterns. This starter page is built to be lightweight and easy to maintain on GitHub Pages.</p>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:22px">
+        <h2>Contact</h2>
+        <div class="card" style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+          <p style="margin:0">Email: <a href="mailto:hello@example.com">hello@example.com</a> (replace with your address)</p>
+          <p style="margin:0">Or open an issue in your GitHub repo for collaboration and feedback.</p>
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <a class="btn" href="mailto:hello@example.com">Email me</a>
+            <a class="btn secondary" href="https://github.com/miegalak" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> miegalak</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="socials" aria-label="Social links">
+          <a href="https://github.com/miegalak" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#" aria-disabled="true">Twitter</a>
+          <a href="#" aria-disabled="true">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle: remembers preference in localStorage
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(t){
+      if(t === 'dark'){root.setAttribute('data-theme','dark'); toggle.setAttribute('aria-pressed','true');}
+      else {root.removeAttribute('data-theme'); toggle.setAttribute('aria-pressed','false');}
+    }
+    const saved = localStorage.getItem('site-theme');
+    if(saved) applyTheme(saved);
+    else {
+      // optional: match system
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(prefersDark) applyTheme('dark');
+    }
+    toggle.addEventListener('click', ()=>{
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next === 'dark' ? 'dark' : 'light');
+      localStorage.setItem('site-theme', next);
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const targetId = a.getAttribute('href').slice(1);
+        if(!targetId) return;
+        const el = document.getElementById(targetId);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
